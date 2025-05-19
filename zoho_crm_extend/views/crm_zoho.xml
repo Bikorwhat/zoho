@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+        <!-- Inherit the CRM Lead form view -->
+        <record id="view_crm_lead_form_inherit_zoho" model="ir.ui.view">
+            <field name="name">crm.lead.form.inherit.zoho</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <!-- Add fields after the existing 'partner_id' field -->
+                <xpath expr="//field[@name='source_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//sheet/group[last()]" position="after">
+                    <group invisible="type == 'opportunity'">
+                        <group>
+                            <field name="industry_id"/>
+                            <field name="annual_revenue_input"/>
+                            <field name="annual_revenue" widget="monetary" options="{'currency_field': 'currency_id'}" readonly="1"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="no_of_employees"/>
+                            <field name="website"/>
+                            <field name="email_opt_out"/>
+                            <field name="social_lead_id"/>
+                        </group>
+                        <group>
+                            <field name="lead_source"/>
+                            <field name="lead_status"/>
+                            <field name="rating"/>
+                            <field name="secondary_email"/>
+                            <field name="twitter"/>
+                        </group>
+                    </group>
+                    <group string="Description Information" class="oe_kanban_details">
+                        <field name="desc"/>
+                    </group>
+                </xpath>
+                <xpath expr="//notebook/page[@name='lead']" position="before">
+                    <page string="Lead Details" invisible="type == 'lead'">
+                        <group>
+                            <group>
+                                <field name="industry_id"/>
+                                <field name="annual_revenue_input"/>
+                                <field name="annual_revenue" widget="monetary" options="{'currency_field': 'currency_id'}" readonly="1"/>
+                                <field name="currency_id" invisible="1"/>
+                               <field name="no_of_employees"/>
+                                <field name="website"/>
+                            </group>
+                            <group>
+                                <field name="lead_source"/>
+                                <field name="lead_status"/>
+                                <field name="rating"/>
+                                <field name="email_opt_out"/>
+                                <field name="social_lead_id"/>
+                                <field name="secondary_email"/>
+                                <field name="twitter"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

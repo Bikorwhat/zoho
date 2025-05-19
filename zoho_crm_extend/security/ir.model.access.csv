@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_zoho_crm_industry,zoho.crm.industry,model_zoho_crm_industry,base.group_user,1,1,1,1
+access_zoho_crm_source,zoho.crm.source,model_zoho_crm_source,base.group_user,1,1,1,1
+access_zoho_crm_status,zoho.crm.status,model_zoho_crm_status,base.group_user,1,1,1,1
+access_zoho_crm_rating,zoho.crm.rating,model_zoho_crm_rating,base.group_user,1,1,1,1

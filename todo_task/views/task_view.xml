@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <record id="project_task_form_inherit_relation" model="ir.ui.view">
+            <field name="name">project.task.form.inherit.relation</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project_todo.project_task_view_todo_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/field[@name='tag_ids']" position="after">
+                    <field name="record_type"/>
+                    <field name="lead_id" invisible="record_type != 'lead'"/>
+                    <field name="contact_id" invisible="record_type != 'contact'"/>
+                    <field name="contact_related_type" invisible="record_type != 'contact'"/>
+                    <!-- <field name="account_id" invisible="contact_related_type != 'account'" domain="[('id', '=', contact_id)]"/> -->
+                    <field name="sale_order_id" invisible="contact_related_type != 'sale_order'" domain="[('partner_id', '=', contact_id)]"/>
+                    <field name="quotation_id" invisible="contact_related_type != 'quotation'" domain="[('partner_id', '=', contact_id)]"/>
+                    <field name="invoice_id" invisible="contact_related_type != 'invoice'" domain="[('partner_id', '=', contact_id)]"/>
+                    <field name="opportunity_id" invisible="contact_related_type != 'opportunity'" domain="[('partner_id', '=', contact_id),('type', '=', 'opportunity')]"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="project_task_form_inherit_relation2" model="ir.ui.view">
+            <field name="name">project.task.form.inherit.relation2</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/field[@name='tag_ids']" position="after">
+                    <field name="record_type"/>
+                </xpath>
+                <xpath expr="//div[@id='date_deadline_and_recurring_task']" position="after">
+                    <field name="lead_id" invisible="record_type != 'lead'"/>
+                    <field name="contact_id" invisible="record_type != 'contact'"/>
+                    <field name="contact_related_type" invisible="record_type != 'contact'"/>
+                    <!-- <field name="account_id" invisible="contact_related_type != 'account'" domain="[('id', '=', contact_id)]"/> -->
+                    <field name="sale_order_id" invisible="contact_related_type != 'sale_order'" domain="[('id', '=', contact_id)]"/>
+                    <field name="quotation_id" invisible="contact_related_type != 'quotation'" domain="[('id', '=', contact_id)]"/>
+                    <field name="invoice_id" invisible="contact_related_type != 'invoice'" domain="[('id', '=', contact_id)]"/>
+                    <field name="opportunity_id" invisible="contact_related_type != 'opportunity'" domain="[('partner_id', '=', contact_id),('type', '=', 'opportunity')]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

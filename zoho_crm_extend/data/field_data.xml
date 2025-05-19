@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Industry records -->
+        <record id="ind_none" model="zoho_crm.industry">
+            <field name="name">-None-</field>
+        </record>
+
+        <!-- Source records -->
+        <record id="source_none" model="zoho_crm.source">
+            <field name="name">-None-</field>
+        </record>
+
+        <!-- Status records -->
+        <record id="status_none" model="zoho_crm.status">
+            <field name="name">-None-</field>
+        </record>
+
+        <!-- Rating records -->
+        <record id="rating_none" model="zoho_crm.rating">
+            <field name="name">-None-</field>
+        </record>
+    </data>
+</odoo>

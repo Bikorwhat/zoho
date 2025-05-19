@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="action_crm_industry" model="ir.actions.act_window">
+        <field name="name">Industries</field>
+        <field name="res_model">zoho_crm.industry</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="action_crm_source" model="ir.actions.act_window">
+        <field name="name">Source</field>
+        <field name="res_model">zoho_crm.source</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="action_crm_rating" model="ir.actions.act_window">
+        <field name="name">Rating</field>
+        <field name="res_model">zoho_crm.rating</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="action_crm_status" model="ir.actions.act_window">
+        <field name="name">Status</field>
+        <field name="res_model">zoho_crm.status</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <!-- Menus -->
+    <menuitem id="menu_zoho_crm_config_root" name="Selection Field Configuration" parent="crm.crm_menu_config" sequence="10"/>
+    <menuitem id="menu_zoho_crm_industry" name="Industries" parent="menu_zoho_crm_config_root" action="action_crm_industry" sequence="1"/>
+    <menuitem id="menu_zoho_crm_source" name="Source" parent="menu_zoho_crm_config_root" action="action_crm_source" sequence="2"/>
+    <menuitem id="menu_zoho_crm_rating" name="Rating" parent="menu_zoho_crm_config_root" action="action_crm_rating" sequence="3"/>
+    <menuitem id="menu_zoho_crm_status" name="Status" parent="menu_zoho_crm_config_root" action="action_crm_status" sequence="4"/>
+</odoo>
