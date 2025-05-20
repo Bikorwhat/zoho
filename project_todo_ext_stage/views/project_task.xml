@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="project_todo_ext_stage_project_task_form" model="ir.ui.view">
+		<field name="name">project.todo.ext.stage.project.task.form</field>
+		<field name="model">project.task</field>
+		<field name="inherit_id" ref="project_todo.project_task_view_todo_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//form/header/field[@name='personal_stage_type_id']" position="after">
+				<field name="custom_stage_id" widget="statusbar"/>
+			</xpath>
+			<xpath expr="//form/header/field[@name='personal_stage_type_id']" position="attributes">
+				<attribute name="invisible">True</attribute>
+			</xpath>
+		</field>
+	</record>
+</odoo>
